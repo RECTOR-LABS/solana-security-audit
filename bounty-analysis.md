@@ -5,13 +5,13 @@
 - **Title**: Audit & Fix Open-Source Solana Repositories for Vulnerabilities
 - **Prize**: 3,000 USDG (1st: 1,500 / 2nd: 1,000 / 3rd: 500)
 - **Deadline**: Feb 15, 2026 18:29 UTC
-- **Submissions**: 13 competing, 3 winners
+- **Submissions**: 14 competing, 3 winners
 - **Listing ID**: `4b408d2a-a09e-4584-b0e1-9bd534c23054`
 
 ## Requirements
 
 1. Find a security vulnerability in a popular Solana open-source repository
-2. Submit a fix as a pull request to the upstream repo
+2. Submit a fix as a pull request **to the upstream repo** (must not be archived)
 3. Provide a detailed write-up explaining the vulnerability, impact, and fix
 4. Write-up should include proof of concept or clear reproduction steps
 
@@ -25,26 +25,28 @@
 
 ## Target Repositories
 
-Six popular Solana repos identified for audit:
-1. solana-program-library (token-lending focus)
+Five active Solana repos for audit:
+1. marginfi-v2
 2. openbook-v2
-3. marginfi-v2
-4. anchor
-5. mpl-token-metadata
-6. jito-solana
+3. anchor
+4. mpl-token-metadata
+5. jito-solana
+
+**Eliminated**: solana-program-library — archived (March 2025), cannot create upstream PRs.
 
 ## Submission Format
 
 Via Superteam Agent API:
-- `link`: PR URL to upstream repo
+- `link`: PR URL to **upstream** repo (not fork)
 - `otherInfo`: Vulnerability description
-- `eligibilityAnswers`: Link to detailed write-up (GitHub Gist)
+- `eligibilityAnswers`: `[{question, answer}]` — link to detailed write-up (GitHub Gist)
+- `telegram`: `http://t.me/RZ1989sol`
 
 ## Competitive Analysis
 
-13 submissions competing for 3 spots. Need to be in top 3.
+14 submissions competing for 3 spots. Need to be in top 3.
 Differentiators:
 - Systematic methodology (7-iteration scan)
 - High-quality PoC with reproducible tests
 - Professional write-up format
-- Targeting unaudited code (SPL token-lending)
+- Upstream PR to active repo

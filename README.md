@@ -6,12 +6,13 @@ Systematic security audit of open-source Solana repositories for the Superteam S
 
 | Priority | Repository | Focus Area |
 |----------|-----------|------------|
-| 1 | [solana-program-library](https://github.com/solana-labs/solana-program-library) (token-lending) | Unaudited lending protocol — arithmetic, flash loans |
-| 2 | [openbook-v2](https://github.com/openbook-dex/openbook-v2) | DEX orderbook, i80f48 fixed-point math |
-| 3 | [marginfi-v2](https://github.com/mrgnlabs/marginfi-v2) | Lending edge cases, two-step liquidation |
-| 4 | [anchor](https://github.com/coral-xyz/anchor) | Framework-level, highest blast radius |
-| 5 | [mpl-token-metadata](https://github.com/metaplex-foundation/mpl-token-metadata) | NFT state machine |
-| 6 | [jito-solana](https://github.com/jito-foundation/jito-solana) | Validator fork, targeted MEV scan |
+| 1 | [marginfi-v2](https://github.com/mrgnlabs/marginfi-v2) | Lending — oracle validation, Token-2022 |
+| 2 | [openbook-v2](https://github.com/openbook-dex/openbook-v2) | DEX orderbook, i64 arithmetic |
+| 3 | [anchor](https://github.com/coral-xyz/anchor) | Framework-level, CPI validation |
+| 4 | [mpl-token-metadata](https://github.com/metaplex-foundation/mpl-token-metadata) | NFT state machine |
+| 5 | [jito-solana](https://github.com/jito-foundation/jito-solana) | Validator fork, targeted MEV scan |
+
+> **Eliminated**: solana-program-library — archived March 2025, cannot create upstream PRs.
 
 ## Audit Methodology
 
@@ -38,6 +39,7 @@ Max score: 1,125. See [SCOREBOARD.md](./SCOREBOARD.md) for ranked findings.
 ```
 solana-security-audit/
   repos/               # Cloned forks
+  writeup/             # Vulnerability write-ups
   SCOREBOARD.md        # Ranked findings
   STRATEGY.md          # Audit strategy & priority
   bounty-analysis.md   # Bounty requirements & notes
