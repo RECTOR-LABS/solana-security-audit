@@ -57,7 +57,9 @@
 ### #2 anchor — DONE
 - **Completed**: Feb 11, 2026
 - **Finding**: F2 — CPI Return<T> (CONFIRMED, SUBMITTED)
-- **PR**: https://github.com/solana-foundation/anchor/pull/4231
+- **Issue**: https://github.com/solana-foundation/anchor/issues/4232
+- **PR**: https://github.com/solana-foundation/anchor/pull/4231 (Fixes #4232)
+- **Tests**: 13/13 passing, cargo check 3/3 clean
 
 ### #3 mpl-token-metadata — DONE
 - **Completed**: Feb 11, 2026
