@@ -1,16 +1,15 @@
 # Audit Strategy
 
-## Rule: No Archived Repos
+## Rule: No Archived or Stale Repos
 
-Never target archived repositories — PRs cannot be created upstream, which is a bounty requirement.
+Never target archived or stale repositories — PRs to inactive repos won't get reviewed, and archived repos block PRs entirely.
 
 ## High-Value Targets (ranked by probability)
 
 1. **MarginFi v2 StakeStateV2 owner check** — deserialization without stake program owner validation
 2. **MarginFi v2 Token-2022 transfer hook gap** — transfer hooks not accounted for
 3. **MarginFi v2 Switchboard oracle staleness** — missing round_open_slot check
-4. **OpenBook v2 i64 arithmetic** — unchecked math in order matching
-5. **Anchor CPI Return<T>** — unvalidated program ID in return data
+4. **Anchor CPI Return<T>** — unvalidated program ID in return data
 
 ## Priority Order Rationale
 
@@ -20,17 +19,18 @@ MarginFi v2 is #1 because:
 - Lending protocol = high-impact vulnerability class
 - Can create upstream PR (not archived)
 
-## Target Repositories (5 active)
+## Target Repositories (4 active)
 
 | # | Repository | Default Branch | Active | Stars |
 |---|-----------|---------------|--------|-------|
-| 1 | marginfi-v2 (mrgnlabs) | `main` | Yes (Feb 2026) | ~300 |
-| 2 | openbook-v2 (openbook-dex) | `master` | Yes (Jul 2024) | ~500 |
-| 3 | anchor (coral-xyz) | `master` | Yes (Jan 2026) | 3,400+ |
-| 4 | mpl-token-metadata (metaplex-foundation) | `main` | Yes (Jan 2026) | ~500 |
-| 5 | jito-solana (jito-foundation) | `master` | Yes (Feb 2026) | ~400 |
+| 1 | marginfi-v2 (mrgnlabs) | `main` | Yes (Jan 2026) | 284 |
+| 2 | anchor (coral-xyz) | `master` | Yes (Jan 2026) | 4,949 |
+| 3 | mpl-token-metadata (metaplex-foundation) | `main` | Yes (Jan 2026) | 243 |
+| 4 | jito-solana (jito-foundation) | `master` | Yes (Feb 2026) | 681 |
 
-**Eliminated**: solana-program-library (solana-labs) — ARCHIVED March 2025, no upstream PRs possible.
+**Eliminated**:
+- solana-program-library (solana-labs) — ARCHIVED March 2025
+- openbook-v2 (openbook-dex) — STALE, last commit June 2024 (~2 years)
 
 ## Time Budget
 
@@ -48,7 +48,7 @@ MarginFi v2 is #1 because:
 
 | Risk | Mitigation |
 |------|------------|
-| Repo is archived | CHECK BEFORE SELECTING — verify with `gh repo view --json isArchived` |
+| Repo is archived/stale | CHECK BEFORE SELECTING — verify with `gh repo view --json isArchived` + check last commit date |
 | Finding already reported upstream | Check open issues + closed PRs before selecting |
 | Fix breaks existing tests | Run full test suite, iterate on fix |
 | Time crunch | Cut iterations 6-7, focus on 1-4 (highest yield) |

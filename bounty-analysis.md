@@ -25,14 +25,15 @@
 
 ## Target Repositories
 
-Five active Solana repos for audit:
+Four active Solana repos for audit:
 1. marginfi-v2
-2. openbook-v2
-3. anchor
-4. mpl-token-metadata
-5. jito-solana
+2. anchor
+3. mpl-token-metadata
+4. jito-solana
 
-**Eliminated**: solana-program-library — archived (March 2025), cannot create upstream PRs.
+**Eliminated**:
+- solana-program-library — archived (March 2025)
+- openbook-v2 — stale (last commit June 2024)
 
 ## Submission Format
 

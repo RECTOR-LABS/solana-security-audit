@@ -7,12 +7,11 @@ Systematic security audit of open-source Solana repositories for the Superteam S
 | Priority | Repository | Focus Area |
 |----------|-----------|------------|
 | 1 | [marginfi-v2](https://github.com/mrgnlabs/marginfi-v2) | Lending — oracle validation, Token-2022 |
-| 2 | [openbook-v2](https://github.com/openbook-dex/openbook-v2) | DEX orderbook, i64 arithmetic |
-| 3 | [anchor](https://github.com/coral-xyz/anchor) | Framework-level, CPI validation |
-| 4 | [mpl-token-metadata](https://github.com/metaplex-foundation/mpl-token-metadata) | NFT state machine |
-| 5 | [jito-solana](https://github.com/jito-foundation/jito-solana) | Validator fork, targeted MEV scan |
+| 2 | [anchor](https://github.com/coral-xyz/anchor) | Framework-level, CPI validation |
+| 3 | [mpl-token-metadata](https://github.com/metaplex-foundation/mpl-token-metadata) | NFT state machine |
+| 4 | [jito-solana](https://github.com/jito-foundation/jito-solana) | Validator fork, targeted MEV scan |
 
-> **Eliminated**: solana-program-library — archived March 2025, cannot create upstream PRs.
+> **Eliminated**: solana-program-library (archived), openbook-v2 (stale ~2 years)
 
 ## Audit Methodology
 
