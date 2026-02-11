@@ -6,27 +6,51 @@ Never target archived or stale repositories — PRs to inactive repos won't get 
 
 ## High-Value Targets (ranked by probability)
 
-1. **MarginFi v2 StakeStateV2 owner check** — deserialization without stake program owner validation
-2. **MarginFi v2 Token-2022 transfer hook gap** — transfer hooks not accounted for
-3. **MarginFi v2 Switchboard oracle staleness** — missing round_open_slot check
-4. **Anchor CPI Return<T>** — unvalidated program ID in return data
+1. **Anchor CPI Return<T>** — unvalidated program ID in return data (**CONFIRMED**, Score 540)
+2. ~~MarginFi v2 StakeStateV2 owner check~~ — FALSE POSITIVE
+3. ~~MarginFi v2 Token-2022 transfer hook gap~~ — FALSE POSITIVE
+4. ~~MarginFi v2 Switchboard oracle staleness~~ — FALSE POSITIVE
 
 ## Priority Order Rationale
 
-MarginFi v2 is #1 because:
-- Active repo (pushed Feb 10 2026)
-- 3 findings identified (highest count after eliminated SPL)
-- Lending protocol = high-impact vulnerability class
-- Can create upstream PR (not archived)
+Anchor F2 is #1 because:
+- **CONFIRMED vulnerability** — all MarginFi findings were false positives
+- Framework-level impact (4,949 stars, affects entire Solana ecosystem)
+- Score 540 (highest by far after rescoring)
+- Active repo (pushed Jan 25, 2026)
+- Internal evidence: same repo's `token_2022.rs` implements correct pattern
+- Clean fix path: add program_id validation to `Return<T>::get()`
 
-## Target Repositories (4 active)
+## Target Repositories (14 active)
 
-| # | Repository | Default Branch | Active | Stars |
-|---|-----------|---------------|--------|-------|
-| 1 | marginfi-v2 (mrgnlabs) | `main` | Yes (Jan 2026) | 284 |
-| 2 | anchor (coral-xyz) | `master` | Yes (Jan 2026) | 4,949 |
-| 3 | mpl-token-metadata (metaplex-foundation) | `main` | Yes (Jan 2026) | 243 |
-| 4 | jito-solana (jito-foundation) | `master` | Yes (Feb 2026) | 681 |
+### Tier 1 — Original (audited)
+
+| # | Repository | Upstream | Default Branch | Last Push | Stars |
+|---|-----------|----------|---------------|-----------|-------|
+| 1 | marginfi-v2 | mrgnlabs | `main` | 2026-01-28 | 284 |
+| 2 | anchor | coral-xyz | `master` | 2026-01-25 | 4,949 |
+| 3 | mpl-token-metadata | metaplex-foundation | `main` | 2026-01-15 | 243 |
+| 4 | jito-solana | jito-foundation | `master` | 2026-02-10 | 681 |
+
+### Tier 2 — Expanded (high-value DeFi/infra)
+
+| # | Repository | Upstream | Default Branch | Last Push | Stars |
+|---|-----------|----------|---------------|-----------|-------|
+| 5 | wormhole | wormhole-foundation | `main` | 2026-02-10 | 1,875 |
+| 6 | agave | anza-xyz | `master` | 2026-02-11 | 1,669 |
+| 7 | pinocchio | anza-xyz | `main` | 2026-02-11 | 849 |
+| 8 | whirlpools | orca-so | `main` | 2026-02-10 | 509 |
+| 9 | protocol-v2 | drift-labs | `master` | 2026-02-11 | 376 |
+| 10 | raydium-clmm | raydium-io | `master` | 2025-12-29 | 368 |
+
+### Tier 3 — Additional
+
+| # | Repository | Upstream | Default Branch | Last Push | Stars |
+|---|-----------|----------|---------------|-----------|-------|
+| 11 | phoenix-v1 | Ellipsis-Labs | `master` | 2026-02-04 | 246 |
+| 12 | pyth-crosschain | pyth-network | `main` | 2026-02-10 | 226 |
+| 13 | squads-v4 | Squads-Protocol | `main` | 2026-02-09 | 171 |
+| 14 | klend | Kamino-Finance | `master` | 2026-02-09 | 158 |
 
 **Eliminated**:
 - solana-program-library (solana-labs) — ARCHIVED March 2025
