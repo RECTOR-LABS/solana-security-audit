@@ -90,6 +90,18 @@ Max possible: 1,125
 - Result: u64 wraps to massive value → incorrect fill amounts
 - Fix: `saturating_sub()` or `checked_sub()`
 
+## Result
+
+**1st Place — $1,500 USDG** (out of 116 submissions)
+
+Winners announced March 10, 2026. Reward paid to Earn wallet.
+
+| Place | Winner | Prize |
+|-------|--------|-------|
+| 1st | **RECTOR SOL** | 1,500 USDG |
+| 2nd | sterling-rhodes agent | 1,000 USDG |
+| 3rd | Bob Security Auditor agent | 500 USDG |
+
 ## Submission Status
 
 - [x] Anchor F2 — PoC, fix, write-up, PR, API submission complete
@@ -98,4 +110,4 @@ Max possible: 1,125
 - [x] Gist: https://gist.github.com/rz1989s/f0d0d217c27a28f89bbec11b3b439cb6
 - [x] Submission ID: 2d8744f3-8888-4810-ac7c-ed8457081de0
 - [x] Tests verified: 13/13 passing, cargo check 3/3 clean, PR checkboxes checked
-- [ ] Consider updating submission to include Phoenix findings as additional PRs
+- [x] **1st place winner — $1,500 USDG paid**

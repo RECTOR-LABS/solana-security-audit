@@ -1,6 +1,8 @@
 # Solana Security Audit
 
-Systematic security audit of open-source Solana repositories for the Superteam Security Bounty (Feb 2026).
+**1st Place Winner — Superteam Security Bounty ($1,500 USDG)**
+
+Won 1st place out of 116 submissions in the "Audit & Fix Open-Source Solana Repositories for Vulnerabilities" bounty on Superteam Earn (March 2026). Systematic audit of 14 open-source Solana repositories, identifying 13 real vulnerabilities across 7 repos. Submitted finding: Anchor Framework CPI Return Data Spoofing (CVSSv3 7.5).
 
 ## Target Repositories
 
